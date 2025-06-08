@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Guía de Galicia</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <style>
+    #map { height: 400px; }
+  </style>
+</head>
+<body class="flex bg-gray-100">
+
+  <!-- Sidebar -->
+  <aside class="w-64 bg-white shadow-md h-screen fixed top-0 left-0 overflow-y-auto">
+    <div class="p-6 text-center border-b">
+      <h1 class="text-2xl font-bold text-green-700">Guía Galicia</h1>
+    </div>
+    <nav class="p-4 space-y-2">
+      <a href="#inicio" class="block px-4 py-2 rounded hover:bg-green-100">Inicio</a>
+      <a href="#mapa" class="block px-4 py-2 rounded hover:bg-green-100">Mapa</a>
+      <a href="#a-coruna" class="block px-4 py-2 rounded hover:bg-green-100">A Coruña</a>
+      <a href="#lugo" class="block px-4 py-2 rounded hover:bg-green-100">Lugo</a>
+      <a href="#ourense" class="block px-4 py-2 rounded hover:bg-green-100">Ourense</a>
+      <a href="#pontevedra" class="block px-4 py-2 rounded hover:bg-green-100">Pontevedra</a>
+    </nav>
+  </aside>
+
+  <!-- Main content -->
+  <main class="ml-64 w-full p-6">
+
+    <!-- Introducción -->
+    <section id="inicio" class="mb-10 animate-fade-in">
+      <h2 class="text-5xl font-extrabold mb-6 text-green-700">Descubre Galicia</h2>
+      <p class="text-xl text-gray-700 leading-relaxed">Galicia es una comunidad autónoma en el noroeste de España, conocida por su naturaleza verde, costa atlántica, pueblos con historia y una gastronomía inigualable. A continuación te presentamos tres lugares destacados de cada una de sus provincias: A Coruña, Lugo, Ourense y Pontevedra.</p>
+    </section>
+
+    <!-- Mapa -->
+    <section id="mapa" class="mb-10">
+      <h2 class="text-3xl font-semibold mb-4">Mapa de Lugares Destacados</h2>
+      <div id="map" class="rounded shadow"></div>
+    </section>
+
+    <!-- Provincias -->
+    <section id="a-coruna" class="mb-10">
+      <h2 class="text-3xl font-bold text-green-700 mb-4">A Coruña</h2>
+      <div class="space-y-12">
+        <div>
+          <section id="torre-hercules" class="mb-10">
+          <img           src="https://www.riasaltas.info/uploads/1/8/8/2/18820202/3794928_orig.jpg" alt="Torre de Hércules">
+          <h3 class="text-2xl font-bold mt-4">Torre de Hércules</h3>
+          <p class="text-lg">Este faro romano es el más antiguo en funcionamiento del mundo. Declarado Patrimonio de la Humanidad por la UNESCO, ofrece una vista panorámica inigualable del océano Atlántico y los acantilados gallegos.</p>
+        </div>
+        <div>
+          <section id="playa-riazor" class="mb-10">
+          <img src="https://www.coruna.gal/IMG/P_Entidad_1403226967677_1099934327828_800_800_U_54cf4074b1af6b9a3591a2342a93f14c.png" alt="Playa de Riazor">
+          <h3 class="text-2xl font-bold mt-4">Playa de Riazor</h3>
+          <p class="text-lg">Ubicada en pleno corazón de A Coruña, esta playa urbana combina arena fina, paseo marítimo, zonas verdes y una gran oferta gastronómica. Es ideal tanto para el baño como para pasear al atardecer.</p>
+        </div>
+        <div>
+          <section id="castillo-san-anton" class="mb-10">
+            <img src="https://saposyprincesas.elmundo.es/assets/2021/10/museo-arqueologico-e-historico-castillo-de-san-anton-en-A-Coruna.jpg" alt="Castillo de San Antón">
+          <h3 class="text-2xl font-bold mt-4">Castillo de San Antón</h3>
+          <p class="text-lg">Fortaleza del siglo XVI construida sobre una pequeña isla, hoy conectada por un puente. Actualmente alberga el Museo Arqueológico, con colecciones que relatan la historia de la ciudad y la región.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="lugo" class="mb-10">
+      <h2 class="text-3xl font-bold text-green-700 mb-4">Lugo</h2>
+      <div class="space-y-12">
+        <div>
+          <section id="muralla-romana" class="mb-10">
+          <img src="https://turismo.deputacionlugo.gal/sites/deputacionlugo.org/files/inline-images/_MG_1951_1.jpg" alt="Muralla Romana de Lugo">
+          <h3 class="text-2xl font-bold mt-4">Muralla Romana</h3>
+          <p class="text-lg">La muralla romana de Lugo es la única del mundo que se conserva completa. Rodea el casco histórico de la ciudad y permite un paseo de más de 2 km sobre ella con vistas a la ciudad moderna y antigua.</p>
+        </div>
+        <div>
+          <section id="playa-catedrales" class="mb-10">
+          <img src="https://galicia.info/wp-content/uploads/2025/02/pexels-randerisphotos-1028859941-20350238-4-scaled.jpg">
+          <h3 class="text-2xl font-bold mt-4">Playa de las Catedrales</h3>
+          <p class="text-lg">Conocida por sus impresionantes formaciones rocosas que recuerdan a arbotantes de catedrales góticas, esta playa es un espectáculo natural que sólo puede disfrutarse en marea baja.</p>
+        </div>
+        <div>
+          <section id="o-cebreiro" class="mb-10">
+          <img src="https://galiciaquever.com/wp-content/uploads/2025/02/O-Cebreiro-perder-el-rumbo-6.jpg" alt="O Cebreiro">
+          <h3 class="text-2xl font-bold mt-4">O Cebreiro</h3>
+          <p class="text-lg">Este pintoresco pueblo de montaña es conocido por sus pallozas, viviendas tradicionales prerromanas, y por ser uno de los primeros pueblos del Camino de Santiago en Galicia.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="ourense" class="mb-10">
+      <h2 class="text-3xl font-bold text-green-700 mb-4">Ourense</h2>
+      <div class="space-y-12">
+        <div>
+          <section id="termas-outariz" class="mb-10">
+          <img src="https://ourense.gal/turismo/wp-content/uploads/2016/04/outarizi1.jpg" alt="Termas de Outariz">
+          <h3 class="text-2xl font-bold mt-4">Termas de Outariz</h3>
+          <p class="text-lg">Ubicadas a orillas del río Miño, estas termas al aire libre ofrecen aguas termales ricas en minerales en un entorno natural relajante, muy popular tanto para turistas como para locales.</p>
+        </div>
+        <div>
+          <section id="puente-romano" class="mb-10">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Roman_bridge%2C_Ourense_%28Spain%29.jpg/500px-Roman_bridge%2C_Ourense_%28Spain%29.jpg" alt="Puente Romano de Ourense">
+          <h3 class="text-2xl font-bold mt-4">Puente Romano</h3>
+          <p class="text-lg">También llamado Puente Viejo, es un símbolo de la ciudad y uno de los puentes romanos mejor conservados de España, que aún conecta ambos lados del Miño.</p>
+        </div>
+        <div>
+          <section id="ribeira-sacra" class="mb-10">
+          <img src="https://turismo.ribeirasacra.org/cgmlImg/470-areiixn/imgCollections/Vistas_Canon_Sil.jpg" alt="Ribeira Sacra">
+          <h3 class="text-2xl font-bold mt-4">Ribeira Sacra</h3>
+          <p class="text-lg">Esta región es famosa por sus cañones del Sil, monasterios medievales y viñedos en terrazas. Es un paraíso natural y cultural que combina historia, vino y paisajes impresionantes.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="pontevedra" class="mb-10">
+      <h2 class="text-3xl font-bold text-green-700 mb-4">Pontevedra</h2>
+      <div class="space-y-12">
+        <div>
+          <section id="islas-cies" class="mb-10">
+          <img src="https://www.campingislascies.com/assets/img/gal-03.jpg" alt="Islas Cíes">
+          <h3 class="text-2xl font-bold mt-4">Islas Cíes</h3>
+          <p class="text-lg">Parte del Parque Nacional Marítimo-Terrestre das Illas Atlánticas, este archipiélago es famoso por su biodiversidad, playas de arena blanca y aguas cristalinas, como la Playa de Rodas.</p>
+        </div>
+        <div>
+          <section id="combarro" class="mb-10">
+          <img src="https://bluscus.es/wp-content/uploads/2021/07/Combarro.jpg" alt="Combarro">
+          <h3 class="text-2xl font-bold mt-4">Combarro</h3>
+          <p class="text-lg">Este pueblo costero destaca por sus hórreos junto al mar y su arquitectura tradicional gallega. Un lugar pintoresco perfecto para pasear y disfrutar de la cocina marinera.</p>
+        </div>
+        <div>
+          <section id="casco-historico" class="mb-10">
+          <img src="https://www.xn--albario-9za.com/wp-content/uploads/2019/12/2020-02-21-centro-historico-de-pontevedra-2.jpg" alt="Casco Histórico de Pontevedra">
+          <h3 class="text-2xl font-bold mt-4">Casco Histórico de Pontevedra</h3>
+          <p class="text-lg">Uno de los centros históricos mejor conservados de Galicia, con calles empedradas, plazas llenas de vida y monumentos que reflejan la rica historia de la ciudad.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    const lugares = [
+      { nombre: "Torre de Hércules", coords: [43.385, -8.406], id: "torre-hercules" },
+      { nombre: "Playa de Riazor", coords: [43.370, -8.406], id: "playa-riazor" },
+      { nombre: "Castillo de San Antón", coords: [43.368, -8.395], id: "castillo-san-anton" },
+      { nombre: "Muralla Romana", coords: [43.010, -7.556], id: "muralla-romana" },
+      { nombre: "Playa de las Catedrales", coords: [43.552, -7.155], id: "playa-catedrales" },
+      { nombre: "O Cebreiro", coords: [42.708, -7.037], id: "o-cebreiro" },
+      { nombre: "Termas de Outariz", coords: [42.337, -7.864], id: "termas-outariz" },
+      { nombre: "Puente Romano", coords: [42.336, -7.865], id: "puente-romano" },
+      { nombre: "Ribeira Sacra", coords: [42.416, -7.596], id: "ribeira-sacra" },
+      { nombre: "Islas Cíes", coords: [42.220, -8.901], id: "islas-cies" },
+      { nombre: "Combarro", coords: [42.431, -8.731], id: "combarro" },
+      { nombre: "Casco Histórico de Pontevedra", coords: [42.433, -8.644], id: "casco-historico" },
+    ];
+
+    const map = L.map('map').setView([42.9, -8.3], 8);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; OpenStreetMap contributors'
+    }).addTo(map);
+
+    lugares.forEach(lugar => {
+      L.marker(lugar.coords)
+        .addTo(map)
+        .bindPopup(`<a href="#${lugar.id}" class="text-green-600">${lugar.nombre}</a>`);
+    });
+  </script>
+
+</body>
+</html>
